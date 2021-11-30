@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Container } from './styled';
 
@@ -23,13 +23,13 @@ function Avatar({
     setSrc(providedSrc || defaultSrc);
   }, [providedSrc, defaultSrc]);
 
-  const handleError = useCallback(() => {
+  const handleError = () => {
     if (initials) {
       setInitialsShown(true);
     } else {
       setSrc(defaultSrc);
     }
-  }, [initials, defaultSrc]);
+  }
 
   return (
     <Container
